@@ -3,7 +3,7 @@ import CountDownTest from "../../components/timer";
 import axios from "axios";
 import io from "socket.io-client";
 
-const socketUrl = "http://localhost:3001";
+const socketUrl = "https://gameday-testing.herokuapp.com";
 
 class QuizLoop extends Component {
     
