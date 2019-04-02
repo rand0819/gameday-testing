@@ -43,10 +43,14 @@ class QuizLoop extends Component {
 
     getQuestions = () => {
         const { socket } = this.state;
-        socket.on("gotquestions", (questions) => {
-            console.log("Questions:",questions);
-            // console.log("placeholder");
-            this.setState({questions});
+        // socket.on("gotquestions", (questions) => {
+        //     console.log("Questions:",questions);
+        //     this.setState({questions});
+        // });
+
+        socket.on("gotquestions", () => {
+            console.log("Questions:");
+            // this.setState({questions});
         });
     }
     
