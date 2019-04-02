@@ -12,7 +12,7 @@ class QuizLoop extends Component {
 
         this.state = {
             socket: null,
-            questions: null
+            questions: "poop"
         }
     }
 
@@ -22,22 +22,20 @@ class QuizLoop extends Component {
 
     componentDidMount() {
         const { socket } = this.state;
-        console.log("didMount");
         
         socket.emit("userConnected")
+        console.log("didMount");
         // axios.get("/api/getquestions")
         //     .then(data => {
         //         console.log("questions", data);
         //     });
-
-        this.getQuestions();
-
     }
-
+    
     initSocket = () => {
         const socket = io(socketUrl);
         socket.on("connect", () => {
             console.log("CONNECTED");
+            this.getQuestions();
         });
 
         this.setState({socket});
