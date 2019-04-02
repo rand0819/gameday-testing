@@ -7,7 +7,7 @@ module.exports = function(socket) {
 
     socket.on("userConnected", () => {
         let questions = [];
-        axios.get("/api/getquestions").then((qstns) => {
+        axios.get("https://gameday-testing.herokuapp.com/api/getquestions").then((qstns) => {
             questions = qstns.data;
             
             io.emit("gotquestions", questions);
