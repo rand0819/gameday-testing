@@ -22,7 +22,8 @@ class QuizLoop extends Component {
 
     componentDidMount() {
         const { socket } = this.state;
-
+        console.log("didMount");
+        
         socket.emit("userConnected")
         // axios.get("/api/getquestions")
         //     .then(data => {
