@@ -10,7 +10,7 @@ module.exports = function(socket) {
         axios.get("https://gameday-testing.herokuapp.com/api/getquestions").then((qstns) => {
             questions = qstns.data;
             
-            io.emit("gotquestions", questions);
+            io.emit("gotquestions", "Got yer questions right here!!!");
         }).catch(err => console.log(err));
     })
 };
